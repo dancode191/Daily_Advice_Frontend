@@ -1,0 +1,212 @@
+.App {
+  height: 100vh;
+}
+.container{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: rgb(38, 135, 135);
+}
+.buttons-container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn{
+  width: 200px;
+  padding: 7px 0px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background: none;
+  font-size: 20px;
+  font-weight: 600;
+  border: 2px solid #898989;
+  color: #898989;
+  cursor: pointer;
+}
+.btn:hover{
+  color: #fff;
+  background-color: #898989;
+}
+.SearchByTextBtn{
+  padding: 7px 5px;
+  border-radius: 10px;
+  background: coral;
+  font-size: 17px;
+  font-weight: 600;
+  border: 2px solid #898989;
+  color: #000;
+  cursor: pointer;
+}
+.SearchByTextBtn:hover{
+  background: none;
+  border: 2px solid coral;
+  color: #fff;
+}
+.searchBtn {
+  background: coral;
+  border: 2px solid #898989;
+  border-radius: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.adviceContainer{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchContainer{
+  visibility: hidden;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%);
+}
+.searchBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: dropSearch 1.5s ease-in-out;
+}
+.searchInput{
+  background: none;
+  border: 2px solid coral;
+  border-radius: 10px;
+  padding: 5px 5px;
+}
+.addEmail{
+  width: 300px;
+  height: 30px;
+  filter: blur(0.5px);
+  border: none;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 2px rgb(114, 114, 114), -1px -1px 5px 1px rgb(105, 105, 105);
+  margin: 20px;
+  padding-left: 10px;
+}
+.search-results-container{
+  position: absolute;
+  height: 300px;
+  width: 450px;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-y: auto;
+}
+.adivceOutput{
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 7px 5px;
+  margin: 5px 0px;
+}
+.adivceOutput p, .adivceBox p{
+  margin: 0px;
+}
+.adivceBox{
+    padding: 5px 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #898989;
+    cursor: pointer;
+    animation: drop 1.5s ease-in-out;
+}
+.emailBtn{
+  width: 33px;
+  height: 33px;
+  background: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.errorMessage{
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  margin: 0px;
+  left: 50%;
+  top: 55%;
+  transform: translateX(-50%) ;
+}
+
+@keyframes drop{
+  from{
+    opacity: 0.1;
+    transform: translateY(-400%);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes dropSearch {
+  from {
+      opacity: 0.1;
+      transform: translateY(-100%);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+}
+
+/* scroll bar css */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 15px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: coral;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media screen and (max-width: 420px) {
+  .search-results-container {
+      width: 300px;
+  }
+}
+@media screen and (max-height: 400px) {
+  .searchContainer {
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
