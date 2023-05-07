@@ -23,6 +23,7 @@ function App() {
 
   let adviceResultsEmail = '';
   let arrayResults = [];
+  const Url = "https://daily-advice-backend.onrender.com"
 
   async function dropAdvice(){
     try{
@@ -30,7 +31,7 @@ function App() {
       setError('');
       setSearchResults([]);
 
-      const response = await axios.get("http://localhost:8000/advice");
+      const response = await axios.get(Url+"/advice");
       setAdvice(response.data);
       
     }catch(err){
@@ -44,7 +45,7 @@ function App() {
 
   async function activeSearch(){
     
-      axios.get("http://localhost:8000/searchWord", {params:{word: searchText}})
+      axios.get(Url+"/searchWord", {params:{word: searchText}})
       .then((response)=>{
       
         arrayResults = response.data.slips;
@@ -70,7 +71,7 @@ function App() {
     if(!error){
       if(userEmail){
 
-        axios.post("http://localhost:8000/sendEmail", adviceEmail)
+        axios.post(Url+"/sendEmail", adviceEmail)
         .then((response)=>{
           console.log("sending mail results: "+response.status);
           setAdvice('');
